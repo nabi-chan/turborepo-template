@@ -11,13 +11,13 @@ turborepo template repository
 
 ## Projects
 
-| 프로젝트명                                              | 프로젝트 설명                |
+| Project Name                                            | Project Description          |
 | ------------------------------------------------------- | ---------------------------- |
 | [**sample-vite-app**](./apps/sample-vite-app/README.md) | Sample application with Vite |
 
 ## Packages
 
-| 패키지 이름                                                       | 패키지 설명                   |
+| Package Name                                                      | Package Description           |
 | ----------------------------------------------------------------- | ----------------------------- |
 | [**@turborepo-template/configs**](./packages/configs/README.md)   | eslint, prettier config files |
 | [**@turborepo-template/tsconfig**](./packages/tsconfig/README.md) | global tsconfig file          |
