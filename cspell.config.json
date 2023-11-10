@@ -1,0 +1,9 @@
+{
+  "allowCompoundWords": true,
+  "enableFiletypes": ["*"],
+  "enableGlobDot": true,
+  "ignorePaths": [".git", ".gitignore", ".vscode", "pnpm-lock.yaml", "*.sql", "CODEOWNERS"],
+  "numSuggestions": 0,
+  "useGitignore": true,
+  "words": ["nabi", "turborepo"]
+}

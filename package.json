@@ -1,0 +1,43 @@
+{
+  "name": "@turborepo-template/repo",
+  "description": "turborepo template repository",
+  "keywords": [
+    "turborepo",
+    "template",
+    "monorepo"
+  ],
+  "license": "MIT",
+  "author": "nabi-chan <hello@nabi.kim>",
+  "type": "module",
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "fix": "pnpm run '/^fix:.+$/'",
+    "fix:eslint": "pnpm lint:eslint --fix",
+    "fix:prettier": "pnpm lint:prettier --write",
+    "postinstall": "husky install",
+    "lint": "pnpm run '/^lint:.+$/'",
+    "lint:eslint": "eslint --max-warnings 0 .",
+    "lint:prettier": "prettier --check --ignore-unknown '**/*'",
+    "lint:spellcheck": "cspell --no-progress --relative '**/*'",
+    "pre-commit": "lint-staged --verbose --no-stash",
+    "start": "turbo start"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "@turborepo-template/configs": "workspace:^",
+    "cspell": "^7.3.8",
+    "eslint": "^8.48.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.16"
+  },
+  "packageManager": "pnpm@8.10.10",
+  "engines": {
+    "node": "^18 || ^20",
+    "pnpm": "^8.10.0"
+  }
+}
