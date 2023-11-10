@@ -6,7 +6,7 @@ turborepo template repository
 
 | 프로젝트명                                              | 프로젝트 설명                |
 | ------------------------------------------------------- | ---------------------------- |
-| [**vite-sample-app**](./apps/vite-sample-app/README.md) | Sample application with Vite |
+| [**sample-vite-app**](./apps/sample-vite-app/README.md) | Sample application with Vite |
 
 ## Packages
 
