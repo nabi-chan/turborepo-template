@@ -1,6 +1,7 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import imports from 'eslint-plugin-import';
+import reactHooks from 'eslint-plugin-react-hooks';
 import importsSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import { ignore } from './eslint-ignore.js';
@@ -12,11 +13,7 @@ const compat = new FlatCompat();
 export default [
   { ignores: [ignore] },
   js.configs.recommended,
-  ...compat.extends(
-    'plugin:@typescript-eslint/strict',
-    'plugin:@typescript-eslint/stylistic',
-    'plugin:react-hooks/recommended',
-  ),
+  ...compat.extends('plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'),
   {
     languageOptions: {
       ecmaVersion: 'latest',
@@ -44,6 +41,10 @@ export default [
         },
       ],
       '@typescript-eslint/no-namespace': 'off',
+      'no-restricted-imports': ['error', { paths: ['src'], patterns: ['../*'] }],
+      'no-restricted-modules': ['error', { paths: ['src'], patterns: ['../*'] }],
+      'no-unused-vars': ['error', { ignoreRestSiblings: true }],
+      'no-useless-constructor': 'error',
     },
   },
   {
@@ -56,6 +57,23 @@ export default [
     files: ['**/*.config.c[jt]s'],
     rules: {
       '@typescript-eslint/no-var-requires': 'off',
+    },
+  },
+  {
+    files: ['**/*.config.[jt]sx'],
+    extends: ['plugin:react/jsx-runtime'],
+    plugins: { reactHooks },
+    rules: {
+      'react-hooks/exhaustive-deps': 'error',
+      'react-hooks/rules-of-hooks': 'error',
+      'react/jsx-key': [
+        'error',
+        {
+          checkFragmentShorthand: true,
+          checkKeyMustBeforeSpread: true,
+        },
+      ],
+      'react/jsx-curly-spacing': ['error', { when: 'never', children: { when: 'always' } }],
     },
   },
   ...compat.extends('prettier'),
