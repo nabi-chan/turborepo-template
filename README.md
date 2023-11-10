@@ -2,6 +2,13 @@
 
 turborepo template repository
 
+## Available Features
+
+- monorepo features with turborepo
+- supports typescript + typescriptreact
+- eslint + prettier + cspell for format/linting
+- commitlint for commit convention
+
 ## Projects
 
 | 프로젝트명                                              | 프로젝트 설명                |
